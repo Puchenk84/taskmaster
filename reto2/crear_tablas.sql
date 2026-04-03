@@ -2,7 +2,7 @@ CREATE TABLE USUARIO (
     id_usuario SERIAL PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    contraseña VARCHAR(255) NOT NULL
+    contrasenya VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE ESTADO (
@@ -34,3 +34,5 @@ CREATE TABLE TAREAS (
 
     CHECK (fecha_limite >= fecha_creacion)
 );
+
+/* debia cambiar ñ por ny*/
