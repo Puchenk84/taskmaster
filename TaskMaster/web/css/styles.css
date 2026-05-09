@@ -53,7 +53,7 @@ nav a:hover {
 /* ================= SECCIÓN PRINCIPAL ================= */
 
 .principal {
-    background-image: url("fondo.jpg");
+    background-image: url("../img/fondo.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -83,17 +83,17 @@ nav a:hover {
 }
 
 /* BOTÓN MEJORADO */
-.principal button {
+.btn-empezar {
+
+    display: inline-block;
     margin-top: 20px;
     padding: 12px 30px;
     font-size: 16px;
-
     background-color: #2c3e50;
     color: white;
-    border: none;
-    cursor: pointer;
-
+    text-decoration: none;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 /* Hover botón */
@@ -214,3 +214,163 @@ footer {
 }
 
 /* ================= AÑADIR MÁS COSAS EN UN FUTURO ================= */
+
+/* ================= TAREAS ================= */
+
+.listado-tareas,
+.crear-tarea,
+.editar-tarea {
+
+    background-color: white;
+
+    margin: 40px auto;
+    padding: 30px;
+
+    width: 90%;
+    max-width: 1000px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+.listado-tareas h2,
+.crear-tarea h2,
+.editar-tarea h2 {
+
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* ================= TABLA ================= */
+
+table {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Cabecera tabla */
+th {
+
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px;
+}
+
+/* Celdas */
+td {
+
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Hover filas */
+tr:hover {
+
+    background-color: #f2f2f2;
+}
+
+/* ================= FORMULARIOS TAREAS ================= */
+
+.crear-tarea form,
+.editar-tarea form {
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Select */
+select {
+
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Botones */
+.crear-tarea button,
+.editar-tarea button {
+
+    margin-top: 15px;
+
+    background-color: #2c3e50;
+    color: white;
+
+    border: none;
+    padding: 12px;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+/* Hover botones */
+.crear-tarea button:hover,
+.editar-tarea button:hover {
+
+    background-color: #1a252f;
+}
+
+/* ================= ANIMACIÓN REAL ================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicamos animación */
+.listado-tareas,
+.crear-tarea,
+.editar-tarea {
+
+    animation: aparecer 0.8s ease;
+}
+
+/* ================= RESPONSIVE TABLA ================= */
+
+@media (max-width: 768px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+
+        display: block;
+    }
+
+    thead {
+
+        display: none;
+    }
+
+    tr {
+
+        margin-bottom: 20px;
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    td {
+
+        text-align: left;
+        padding: 10px 0;
+        border: none;
+    }
+}
