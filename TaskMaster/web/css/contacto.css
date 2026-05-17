@@ -1,0 +1,132 @@
+/* ================= BASE ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+}
+
+main {
+    flex: 1;
+}
+
+/* ================= CABECERA ================= */
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ================= CONTACTO ================= */
+
+.contacto {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contacto h2 {
+    margin-bottom: 15px;
+}
+
+.contacto p {
+    margin-bottom: 50px;
+    color: #555;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= CAMPOS ================= */
+
+input,
+textarea {
+
+    margin: 10px 0;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+}
+
+/* Evita redimensionar el textarea */
+
+textarea {
+    resize: none;
+}
+
+/* ================= BOTÓN ================= */
+
+form button {
+
+    background-color: #3498db;
+    color: white;
+
+    border: none;
+    padding: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    form {
+        width: 90%;
+    }
+}

@@ -1,0 +1,226 @@
+/* ================= BASE ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+}
+
+main {
+    flex: 1;
+}
+
+/* ================= CABECERA ================= */
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ================= SECCIONES ================= */
+
+.listado-tareas,
+.crear-tarea,
+.editar-tarea {
+
+    background-color: white;
+
+    margin: 40px auto;
+    padding: 30px;
+
+    width: 90%;
+    max-width: 1000px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    animation: aparecer 0.8s ease;
+}
+
+/* ================= TÍTULOS ================= */
+
+.listado-tareas h2,
+.crear-tarea h2,
+.editar-tarea h2 {
+
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* ================= TABLA ================= */
+
+table {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px;
+}
+
+td {
+
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:hover {
+
+    background-color: #f2f2f2;
+}
+
+/* ================= FORMULARIOS ================= */
+
+.crear-tarea form,
+.editar-tarea form {
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= CAMPOS ================= */
+
+input,
+textarea,
+select {
+
+    margin: 10px 0;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+}
+
+/* Evita redimensionar textarea */
+
+textarea {
+    resize: none;
+}
+
+/* ================= BOTONES ================= */
+
+.crear-tarea button,
+.editar-tarea button {
+
+    margin-top: 15px;
+
+    background-color: #2c3e50;
+    color: white;
+
+    border: none;
+    padding: 12px;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.crear-tarea button:hover,
+.editar-tarea button:hover {
+
+    background-color: #1a252f;
+}
+
+/* ================= ANIMACIÓN ================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+
+        margin-bottom: 20px;
+        background-color: white;
+
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    td {
+
+        text-align: left;
+        padding: 10px 0;
+
+        border: none;
+    }
+}

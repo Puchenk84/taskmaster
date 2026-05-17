@@ -1,5 +1,3 @@
-// (imports y código inicial EXACTAMENTE igual que el tuyo)
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -66,6 +64,15 @@ public class Main {
 
     // -------- USUARIOS --------
 
+    /**
+     * Crea un nuevo usuario dentro del sistema.
+     *
+     * Solicita nombre, email y contraseña por consola.
+     *
+     * @author Sergio Martínez
+     * @version 1.0
+     */
+
     static void crearUsuario() {
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
@@ -86,7 +93,7 @@ public class Main {
             return;
         }
 
-        for (Usuario u : usuarios) System.out.println(u);
+        mostrarUsuarios();
     }
 
     // -------- TAREAS --------
@@ -99,7 +106,7 @@ public class Main {
         }
 
         System.out.println("\nUsuarios disponibles:");
-        for (Usuario u : usuarios) System.out.println(u);
+        mostrarUsuarios();
 
         System.out.print("ID usuario: ");
         int idU = sc.nextInt();
@@ -121,13 +128,21 @@ public class Main {
         LocalDate fechaLimite;
 
         try {
+
             System.out.print("Fecha inicio (dd/MM/yyyy): ");
             fechaInicio = LocalDate.parse(sc.nextLine(), formatter);
 
             System.out.print("Fecha límite (dd/MM/yyyy): ");
             fechaLimite = LocalDate.parse(sc.nextLine(), formatter);
 
+            if (fechaLimite.isBefore(fechaInicio)) {
+
+                System.out.println("La fecha límite no puede ser anterior a la fecha de inicio");
+                return;
+            }
+
         } catch (DateTimeParseException e) {
+
             System.out.println("Formato de fecha incorrecto");
             return;
         }
@@ -136,7 +151,7 @@ public class Main {
         String obs = sc.nextLine();
 
         System.out.println("\nEstados:");
-        for (Estado e : estados) System.out.println(e);
+        mostrarEstados();
 
         System.out.print("ID estado: ");
         int idE = sc.nextInt();
@@ -148,7 +163,7 @@ public class Main {
         }
 
         System.out.println("\nCategorías:");
-        for (Categoria c : categorias) System.out.println(c);
+        mostrarCategorias();
 
         System.out.print("ID categoría: ");
         int idC = sc.nextInt();
@@ -180,7 +195,7 @@ public class Main {
             return;
         }
 
-        for (Tarea t : tareas) System.out.println(t);
+        mostrarTareas();
     }
 
     static void cambiarEstado() {
@@ -202,7 +217,7 @@ public class Main {
         }
 
         System.out.println("Estados disponibles:");
-        for (Estado e : estados) System.out.println(e);
+        mostrarEstados();
 
         System.out.print("Nuevo estado: ");
         int idE = sc.nextInt();
@@ -267,7 +282,7 @@ public class Main {
         t.descripcion = sc.nextLine();
 
         System.out.println("Categorías:");
-        for (Categoria c : categorias) System.out.println(c);
+        mostrarCategorias();
 
         System.out.print("Nueva categoría: ");
         int idC = sc.nextInt();
@@ -281,7 +296,7 @@ public class Main {
     static void filtrarPorCategoria() {
 
         System.out.println("Categorías:");
-        for (Categoria c : categorias) System.out.println(c);
+        mostrarCategorias();
 
         System.out.print("ID categoría: ");
         int id = sc.nextInt();
@@ -296,7 +311,7 @@ public class Main {
     static void verTareasPorUsuario() {
 
         System.out.println("Usuarios:");
-        for (Usuario u : usuarios) System.out.println(u);
+        mostrarUsuarios();
 
         System.out.print("ID usuario: ");
         int id = sc.nextInt();
@@ -308,7 +323,42 @@ public class Main {
         }
     }
 
+    // -------- MÉTODOS AUXILIARES --------
+
+    static void mostrarUsuarios() {
+        for (Usuario u : usuarios) {
+            System.out.println(u);
+        }
+    }
+
+    static void mostrarTareas() {
+        for (Tarea t : tareas) {
+            System.out.println(t);
+        }
+    }
+
+    static void mostrarEstados() {
+        for (Estado e : estados) {
+            System.out.println(e);
+        }
+    }
+
+    static void mostrarCategorias() {
+        for (Categoria c : categorias) {
+            System.out.println(c);
+        }
+    }
+
     // -------- BUSCADORES --------
+
+    /**
+     * Busca un usuario a partir de su identificador.
+     *
+     * @param id Identificador del usuario
+     * @return Usuario encontrado o null si no existe
+     * @author Sergio Martínez
+     * @version 1.0
+     */
 
     static Usuario buscarUsuario(int id) {
         for (Usuario u : usuarios)
